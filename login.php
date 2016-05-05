@@ -5,10 +5,10 @@ $link = new mysqli($host, $user, $password, $database); //DB connection
 
 
 if ($link->connect_error) { //check database connection
-    echo "Neuspjelo spajanje na bazu:". $link->connect_errno;
+    echo "Database connection failed:". $link->connect_errno;
 }
 else {
-    echo "Uspjesno ste spojeni na bazu";
+    echo "Database connection successful";
 }
 
 //variables
@@ -30,18 +30,14 @@ if ($stmt = $link->prepare($query)){
     $stmt->execute();
     $stmt->bind_result($ID);
     $stmt->fetch();
-    $res_query = $ID; //postavlja rezultat querya u varijablu
+    $res_query = $ID; //sets query result into variable
     $stmt->close();
     }
     else {
         echo "neuspjeli upit";
     }
 
-//echo "<hr>";
-//echo $res_query; //ID korisnika ako je login uspješan
-//echo "<hr>";
-
-//provjera dal je korisnik ulogiran i dali je administrator
+//check if user is logges in and if is administrator
 if (isset($res_query)) {
     //echo "Login succesfull"; //višak
     //echo "<hr>"; //višak
@@ -53,12 +49,10 @@ if (isset($res_query)) {
         $row = $result->fetch_array();
         //echo $row[0]."<br>"; //višak
         if(!empty($row)){
-        //echo "Korisnik je administrator";
         header("Location: admin_page.php");
         exit;
         }
         else {
-            //echo "Korisnik nije administrator";
             header("Location: user_page.php");
             exit;
         }
@@ -68,7 +62,6 @@ if (isset($res_query)) {
 }
 
 else {
-    //echo "Wrong username or password";
     header("Location: index1.php?error=1");
     exit;
 }
