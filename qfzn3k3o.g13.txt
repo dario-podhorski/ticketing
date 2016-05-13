@@ -1,0 +1,15 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch ticketing_branch
+# Your branch is up-to-date with 'origin/ticketing_branch'.
+#
+# Changes to be committed:
+#	modified:   admin_page.php
+#	modified:   index1.php
+#	modified:   login.php
+#	new file:   logout.php
+#	modified:   user_page.php
+#	copied:     index1.php -> view.php
+#
+

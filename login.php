@@ -1,30 +1,46 @@
 <?php
 
+session_start();
+
+if (!isset($_SESSION['login'])) {
+    $_SESSION['login']=false;
+}
+
+
+/**********************
+* Database connection
+**********************/
 require_once 'data/db_conn.php';
-$link = new mysqli($host, $user, $password, $database); //DB connection
+$link = new mysqli($host, $user, $password, $database);
 
 
 if ($link->connect_error) { //check database connection
     echo "Database connection failed:". $link->connect_errno;
 }
-else {
-    echo "Database connection successful";
-}
+//*********************
 
-//variables
+
+/**********************
+* Get and set variables
+**********************/
 $username = $_POST['username'];
 $password = $_POST['password'];
 $res_query = '';
+//*********************
 
-//echo $username."<br>";
-//echo $password."<br>";
 
+/***************
+* Database Query
+***************/
 $query = "SELECT korisnici.id_korisnik FROM korisnici
 JOIN password on korisnici.id_korisnik = password.id_korisnik
 WHERE email =? AND password= ?";
+//**************
 
-//echo $query."<br>";
 
+/*************************
+*Perform query on database
+*************************/
 if ($stmt = $link->prepare($query)){
     $stmt->bind_param("ss", $username, $password);
     $stmt->execute();
@@ -34,34 +50,38 @@ if ($stmt = $link->prepare($query)){
     $stmt->close();
     }
     else {
-        echo "neuspjeli upit";
+        echo "Query failed";
     }
 
-//check if user is logges in and if is administrator
-if (isset($res_query)) {
-    //echo "Login succesfull"; //višak
-    //echo "<hr>"; //višak
+echo $res_query;
+
+/*********************************************
+* Check if loggin successful and is user ADMIN
+*********************************************/
+if (isset($res_query)) {     //If login successful
+
     $admin_query = "SELECT * FROM administratori
                     WHERE id_korisnik = $res_query";
-    //echo $admin_query."<br>"; //višak
+
 
     if($result = $link->query($admin_query)){
         $row = $result->fetch_array();
-        //echo $row[0]."<br>"; //višak
-        if(!empty($row)){
-        header("Location: admin_page.php");
-        exit;
+
+        if(!empty($row)){    //if ADMIN
+        $_SESSION['admin'] = 1;
+        header('Location:index1.php');
         }
-        else {
-            header("Location: user_page.php");
-            exit;
+        else {             //if NORMAL user
+            $_SESSION['user'] = 1;
+            header('Location:index1.php');
         }
         $result->close();
     }
 
 }
 
-else {
+else {    //if login unsuccessful
+    unset ($_SESSION['login']);
     header("Location: index1.php?error=1");
     exit;
 }
