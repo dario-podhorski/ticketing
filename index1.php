@@ -18,9 +18,7 @@ else {
         header('Location: user_page.php');
         exit;
     }
-    //else {
-        //$_GET['error'] = 1;
-    //}
+    
 }
  ?>
  <!DOCTYPE html>
