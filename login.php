@@ -25,9 +25,15 @@ if ($link->connect_error) { //check database connection
 
 /**
 * Get and set variables
+<<<<<<< HEAD
+**********************/
+$username = $_SESSION['username'];
+$password = $_SESSION['password'];
+=======
 */
 $username = $_POST['username'];
 $password = $_POST['password'];
+>>>>>>> refs/remotes/origin/master
 $res_query = '';
 
 
@@ -40,7 +46,10 @@ JOIN password on korisnici.id_korisnik = password.id_korisnik
 WHERE email =? AND password= ?";
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> refs/remotes/origin/master
 /**
 *Perform query on database
 */

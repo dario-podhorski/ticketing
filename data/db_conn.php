@@ -2,5 +2,5 @@
 $host = 'localhost';
 $database= 'ticketing';
 $user = 'root';
-$password = '';
+$password = 'mysql';
  ?>
