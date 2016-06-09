@@ -16,7 +16,7 @@
                     <h1 class="text-center login-title">Log In</h1>
                     <div class="account-wall">
                         <form class="form-signin" method="post" action="login.php">
-                            <input type="text" class="form-control" placeholder="Email" name="username"required autofocus>
+                            <input type="text" class="form-control" placeholder="Email" name="username" required autofocus>
                             <input type="password" class="form-control" placeholder="Password" name="password" required>
                             <?php if (isset($_GET['error'])) {
                                         echo "<p class='text-center' style=color:red>Wrong username or password</p>";

@@ -7,7 +7,7 @@ session_start();
 
 if (!isset($_SESSION['login'])) {
     $_SESSION['login']=false;
-}
+} 
 
 
 /**
@@ -25,10 +25,11 @@ if ($link->connect_error) { //check database connection
 /**
 * Get and set variables
 */
-$username = $_SESSION['username'];
-$password = $_SESSION['password'];
+$usrname = $_POST['username'];
+$pass = $_POST['password'];
 $res_query = '';
 
+print_r($_POST);
 
 
 /**
@@ -43,7 +44,7 @@ WHERE email =? AND password= ?";
 *Perform query on database
 */
 if ($stmt = $link->prepare($query)){
-    $stmt->bind_param("ss", $username, $password);
+    $stmt->bind_param("ss", $usrname, $pass);
     $stmt->execute();
     $stmt->bind_result($ID);
     $stmt->fetch();
@@ -81,7 +82,7 @@ if (isset($res_query)) {     //If login successful
 
 }
 
-else {    //if login unsuccessful
+ else {    //if login unsuccessful
     unset ($_SESSION['login']);
     header("Location: index1.php?error=1");
     exit;
