@@ -1,5 +1,8 @@
 <?php
 
+/**
+*Login script
+*/
 session_start();
 
 if (!isset($_SESSION['login'])) {
@@ -7,9 +10,9 @@ if (!isset($_SESSION['login'])) {
 }
 
 
-/**********************
+/**
 * Database connection
-**********************/
+*/
 require_once 'data/db_conn.php';
 $link = new mysqli($host, $user, $password, $database);
 
@@ -17,30 +20,30 @@ $link = new mysqli($host, $user, $password, $database);
 if ($link->connect_error) { //check database connection
     echo "Database connection failed:". $link->connect_errno;
 }
-//*********************
 
 
-/**********************
+
+/**
 * Get and set variables
-**********************/
+*/
 $username = $_POST['username'];
 $password = $_POST['password'];
 $res_query = '';
-//*********************
 
 
-/***************
+
+/**
 * Database Query
-***************/
+*/
 $query = "SELECT korisnici.id_korisnik FROM korisnici
 JOIN password on korisnici.id_korisnik = password.id_korisnik
 WHERE email =? AND password= ?";
-//**************
 
 
-/*************************
+
+/**
 *Perform query on database
-*************************/
+*/
 if ($stmt = $link->prepare($query)){
     $stmt->bind_param("ss", $username, $password);
     $stmt->execute();
@@ -55,9 +58,9 @@ if ($stmt = $link->prepare($query)){
 
 echo $res_query;
 
-/*********************************************
+/**
 * Check if loggin successful and is user ADMIN
-*********************************************/
+*/
 if (isset($res_query)) {     //If login successful
 
     $admin_query = "SELECT * FROM administratori
