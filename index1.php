@@ -1,5 +1,8 @@
-<!--Login page for users-->
 <?php
+
+/**
+*Main login
+*/
 
 session_start();
 

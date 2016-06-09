@@ -1,5 +1,8 @@
 <?php
 
+/**
+*Login script
+*/
 session_start();
 
 if (!isset($_SESSION['login'])) {
@@ -17,27 +20,36 @@ $link = new mysqli($host, $user, $password, $database);
 if ($link->connect_error) { //check database connection
     echo "Database connection failed:". $link->connect_errno;
 }
-//*********************
 
 
-/**********************
+
+/**
 * Get and set variables
+<<<<<<< HEAD
 **********************/
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
+=======
+*/
+$username = $_POST['username'];
+$password = $_POST['password'];
+>>>>>>> refs/remotes/origin/master
 $res_query = '';
-//*********************
 
 
-/***************
+
+/**
 * Database Query
-***************/
+*/
 $query = "SELECT korisnici.id_korisnik FROM korisnici
 JOIN password on korisnici.id_korisnik = password.id_korisnik
 WHERE email =? AND password= ?";
-//**************
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/master
 /**
 *Perform query on database
 */
