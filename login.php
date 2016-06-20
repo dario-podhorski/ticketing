@@ -35,8 +35,8 @@ print_r($_POST);
 /**
 * Database Query
 */
-$query = "SELECT korisnici.id_korisnik FROM korisnici
-JOIN password on korisnici.id_korisnik = password.id_korisnik
+$query = "SELECT users.id_user FROM users
+JOIN password on users.id_user = password.id_user
 WHERE email =? AND password= ?";
 
 
@@ -62,8 +62,8 @@ echo $res_query;
 */
 if (isset($res_query)) {     //If login successful
 
-    $admin_query = "SELECT * FROM administratori
-                    WHERE id_korisnik = $res_query";
+    $admin_query = "SELECT * FROM admins
+                    WHERE id_user = $res_query";
 
 
     if($result = $link->query($admin_query)){
