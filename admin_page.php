@@ -1,5 +1,5 @@
 <?php
-echo "Ovo su administratorske stranice";
+echo "These are admin pages. Thank You";
 
 ?>
 <!DOCTYPE html>
