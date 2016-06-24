@@ -5,7 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css\bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src=""></script>
+        <script src="jquery/jquery-1.12.3.min.js" type="text/javascript"></script>
         <script src="js\bootstrap.min.js"></script>
         <title>Log In</title>
     </head>
