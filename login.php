@@ -14,7 +14,7 @@ if (!isset($_SESSION['login'])) {
 * Database connection
 */
 require_once 'data/db_conn.php';
-$link = new mysqli($host, $user, $password, $database);
+$link = new PDO("mysql:host=$host;dbname=$database", $user, $password);
 
 
 if ($link->connect_error) { //check database connection
@@ -29,7 +29,7 @@ $usrname = $_POST['username'];
 $pass = $_POST['password'];
 $res_query = '';
 
-print_r($_POST);
+//print_r($_POST);
 
 
 /**
@@ -37,37 +37,36 @@ print_r($_POST);
 */
 $query = "SELECT users.id_user FROM users
 JOIN password on users.id_user = password.id_user
-WHERE email =? AND password= ?";
+WHERE email =? AND password=?";
 
 
 /**
 *Perform query on database
 */
 if ($stmt = $link->prepare($query)){
-    $stmt->bind_param("ss", $usrname, $pass);
+    $stmt->bindParam(1, $usrname);
+    $stmt->bindParam(2, $pass);
     $stmt->execute();
-    $stmt->bind_result($ID);
-    $stmt->fetch();
-    $res_query = $ID; //sets query result into variable
-    $stmt->close();
+    $res_query=$stmt->fetch();
+    $ID = $res_query['id_user'];
     }
     else {
         echo "Query failed";
     }
 
-echo $res_query;
+echo $ID;
 
 /**
 * Check if loggin successful and is user ADMIN
 */
-if (isset($res_query)) {     //If login successful
+if (isset($ID)) {     //If login successful
 
     $admin_query = "SELECT * FROM admins
-                    WHERE id_user = $res_query";
+                    WHERE id_user = $ID";
 
 
     if($result = $link->query($admin_query)){
-        $row = $result->fetch_array();
+        $row = $result->fetch();
 
         if(!empty($row)){    //if ADMIN
         $_SESSION['admin'] = 1;
