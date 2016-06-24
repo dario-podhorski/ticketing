@@ -22,4 +22,8 @@ class user {
         $this->phone=$phone;
         $this->city=$city;
     }
+    
+    function getID(){
+        return $this->id;
+    }
 }
