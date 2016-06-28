@@ -1,11 +1,11 @@
-<?php
+<?php 
 
 /**
 *Login script
 */
 session_start();
 
-if (!isset($_SESSION['login'])) {
+if (!filter_has_var(INPUT_SESSION,'login')) {
     $_SESSION['login']=false;
 } 
 
@@ -25,11 +25,9 @@ if ($link->connect_error) { //check database connection
 /**
 * Get and set variables
 */
-$usrname = $_POST['username'];
-$pass = $_POST['password'];
+$usrname = filter_input(INPUT_POST, 'username', FILTER_VALIDATE_EMAIL);
+$pass = filter_input(INPUT_POST, 'password');
 $res_query = '';
-
-//print_r($_POST);
 
 
 /**
@@ -53,8 +51,6 @@ if ($stmt = $link->prepare($query)){
     else {
         echo "Query failed";
     }
-
-echo $ID;
 
 /**
 * Check if loggin successful and is user ADMIN
