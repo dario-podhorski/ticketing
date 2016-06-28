@@ -1,14 +1,5 @@
 <?php
-echo "These are admin pages. Thank You";
+include_once 'view/admin_view.php';
 
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-    <a href="logout.php">Logout</a>
-    </body>
-</html>
+
