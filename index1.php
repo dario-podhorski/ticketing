@@ -7,7 +7,7 @@
 session_start();
 
 if (!isset($_SESSION['login'])) {
-    include "login_view.php";
+    include "view/login_view.php";
 }
 else {
     if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
