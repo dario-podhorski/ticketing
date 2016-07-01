@@ -5,7 +5,7 @@
  *
  * @author Dario
  */
-class user {
+class User {
     
     protected $id;
     protected $name;
