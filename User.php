@@ -9,7 +9,7 @@ class User {
     
     protected $id;
     protected $name;
-    protected $surName;
+    protected $lastName;
     protected $email;
     protected $phone;
     protected $city;
@@ -26,4 +26,25 @@ class User {
     function getID(){
         return $this->id;
     }
+    
+    function getName(){
+        return $this->name;
+    }
+    
+    function getlastName(){
+        return $this->lastName;
+    }
+    
+    function getEmail(){
+        return $this->email;
+    }
+    
+    function getPhone() {
+        return $this->phone;
+    }
+    
+    function getCity() {
+        return $this->city;
+    }
 }
+
