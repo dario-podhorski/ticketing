@@ -13,6 +13,7 @@ class User {
     protected $email;
     protected $phone;
     protected $city;
+    protected $admin=FALSE;
     
     function __construct($id, $name, $surName, $email, $phone, $city) {
         $this->id=$id;
@@ -21,29 +22,30 @@ class User {
         $this->email=$email;
         $this->phone=$phone;
         $this->city=$city;
+        
     }
     
-    function getID(){
+    public function getID(){
         return $this->id;
     }
     
-    function getName(){
+    public function getName(){
         return $this->name;
     }
     
-    function getlastName(){
+    public function getlastName(){
         return $this->lastName;
     }
     
-    function getEmail(){
+    public function getEmail(){
         return $this->email;
     }
     
-    function getPhone() {
+    public function getPhone() {
         return $this->phone;
     }
     
-    function getCity() {
+    public function getCity() {
         return $this->city;
     }
 }
