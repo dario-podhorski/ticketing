@@ -6,8 +6,10 @@
  * and open the template in the editor.
  */
 
-namespace App\Models;
-
+namespace app\models;
+use database\DB;
+use PDO;
+require_once 'database/db_conn.php';
 /**
  * Description of UsersTable
  *
@@ -15,7 +17,14 @@ namespace App\Models;
  */
 class UsersTable {
     
+    
     static function getUser($ID) {
         
+        $dbconn = DB::getConnection();
+        $query = "SELECT * FROM ticketing.users WHERE id_user = $ID";
+        $stmt = $dbconn->query($query);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
     }
 }
