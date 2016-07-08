@@ -13,8 +13,8 @@ if (!filter_has_var(INPUT_SESSION,'login')) {
 /**
 * Database connection
 */
-require_once 'database/db_conn.php';
-$link = new PDO("mysql:host=$host;dbname=$database", $user, $password);
+require_once 'database/DB.php';
+$link = \database\DB::getConnection();
 
 
 if ($link->connect_error) { //check database connection
