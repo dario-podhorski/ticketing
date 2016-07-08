@@ -7,21 +7,22 @@
  */
 class User {
     
-    protected $id;
-    protected $name;
-    protected $lastName;
-    protected $email;
-    protected $phone;
-    protected $city;
-    protected $admin=FALSE;
+    private $id;
+    private $name;
+    private $lastName;
+    private $email;
+    private $phone;
+    private $city;
+    private $admin;
     
-    function __construct($id, $name, $lastName, $email, $phone, $city) {
+    function __construct($id, $name, $lastName, $email, $phone, $city, $admin=FALSE) {
         $this->id=$id;
         $this->name=$name;
         $this->lastName=$lastName;
         $this->email=$email;
         $this->phone=$phone;
         $this->city=$city;
+        $this->admin=$admin;
         
     }
     
@@ -33,7 +34,7 @@ class User {
         return $this->name;
     }
     
-    public function getlastName(){
+    public function getLastName(){
         return $this->lastName;
     }
     
