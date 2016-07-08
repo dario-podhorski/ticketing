@@ -10,6 +10,7 @@ require_once 'database/DB.php';
  * Model for getting data from users table in database
  * @author Dario
  */
+
 class UsersTable {
     
     
