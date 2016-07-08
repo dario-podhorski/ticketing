@@ -15,10 +15,10 @@ class User {
     protected $city;
     protected $admin=FALSE;
     
-    function __construct($id, $name, $surName, $email, $phone, $city) {
+    function __construct($id, $name, $lastName, $email, $phone, $city) {
         $this->id=$id;
         $this->name=$name;
-        $this->surName=$surName;
+        $this->lastName=$lastName;
         $this->email=$email;
         $this->phone=$phone;
         $this->city=$city;
