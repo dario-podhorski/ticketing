@@ -1,8 +1,15 @@
 <?php 
 
+
 /**
 *Login script
 */
+
+//use app\models;
+
+require_once 'app/models/UsersTable.php';
+require_once 'User.php';
+
 session_start();
 
 if (!filter_has_var(INPUT_SESSION,'login')) {
@@ -66,13 +73,20 @@ if (isset($ID)) {     //If login successful
 
         if(!empty($row)){    //if ADMIN
         $_SESSION['admin'] = 1;
+        $loggedUser = app\models\UsersTable::getUser($ID);
+        $adminUser = new User($loggedUser['id_user'], $loggedUser['name'], $loggedUser['lastname'], $loggedUser['email'],
+                                $loggedUser['phone'], $loggedUser['city'], $admin = TRUE);
+        $_SESSION['loggeduser'] = serialize($adminUser);
         header('Location:index1.php');
         }
         else {             //if NORMAL user
             $_SESSION['user'] = 1;
+            $loggedUser = app\models\UsersTable::getUser($ID);
+            $user = new User($users['id_user'], $users['name'], $users['lastname'], $users['email'], $users['phone'], $users['city']);
+            $_SESSION['loggeduser'] = serialize($user);
             header('Location:index1.php');
         }
-        $result->close();
+        
     }
 
 }
@@ -82,4 +96,4 @@ if (isset($ID)) {     //If login successful
     header("Location: index1.php?error=1");
     exit;
 }
-?>
+
