@@ -13,9 +13,6 @@ class DB {
     public static function getConnection(){
         $_connection = new \PDO('mysql:host='.self::host.';dbname='.self::database, self::user, self::password);
         return $_connection;
-        
-
-        
     }
 }
 
