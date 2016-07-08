@@ -1,18 +1,13 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace app\models;
 use database\DB;
 use PDO;
 require_once 'database/DB.php';
+
 /**
  * Description of UsersTable
- *
+ * Model for getting data from users table in database
  * @author Dario
  */
 class UsersTable {
