@@ -9,7 +9,7 @@
 namespace app\models;
 use database\DB;
 use PDO;
-require_once 'database/db_conn.php';
+require_once 'database/DB.php';
 /**
  * Description of UsersTable
  *
