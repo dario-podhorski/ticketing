@@ -6,25 +6,18 @@
  * and open the template in the editor.
  */
 
-//use \database\DB;
-//include_once 'database/db_conn.php';
-
-/*$dbconn=  DB::getConnection();
-
-$query="SELECT * FROM ticketing.users WHERE id_user = '2'";
-
-$stmt = $dbconn->query($query);
-$stmt->execute();
-$result=$stmt->fetch(PDO::FETCH_ASSOC);
-echo "<pre>";
-print_r($result);
-echo '</pre>';*/
-
-
 use app\models\UsersTable;
 require_once 'app/models/UsersTable.php';
+require_once 'User.php';
 
 $users=  UsersTable::getUser(1);
 echo "<pre>";
 print_r($users);
 echo "</pre>";
+
+$user = new User($users['id_user'], $users['name'], $users['lastname'], $users['email'], $users['phone'], $users['city']);
+
+
+echo '<pre>';
+var_dump($user);
+echo '</pre>';
