@@ -17,10 +17,13 @@ class UsersTable {
     static function getUser($ID) {
         
         $dbconn = DB::getConnection();
-        $query = "SELECT * FROM ticketing.users WHERE id_user = $ID";
-        $stmt = $dbconn->query($query);
+        $query = "SELECT * FROM ticketing.users WHERE id_user = ?";
+        $stmt = $dbconn->prepare($query);
+        $stmt->bindParam(1, $ID);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
+    
+    
 }
