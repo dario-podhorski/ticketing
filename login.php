@@ -12,8 +12,8 @@ require_once 'User.php';
 
 session_start();
 
-if (!filter_has_var(INPUT_SESSION,'login')) {
-    $_SESSION['login']=false;
+if (!isset($_SESSION['login'])) {
+    $_SESSION['login']=FALSE;
 } 
 
 
@@ -73,6 +73,7 @@ if (isset($ID)) {     //If login successful
 
         if(!empty($row)){    //if ADMIN
         $_SESSION['admin'] = 1;
+        $_SESSION['login'] = TRUE;
         $loggedUser = app\models\UsersTable::getUser($ID);
         $adminUser = new User($loggedUser['id_user'], $loggedUser['name'], $loggedUser['lastname'], $loggedUser['email'],
                                 $loggedUser['phone'], $loggedUser['city'], $admin = TRUE);
@@ -81,6 +82,7 @@ if (isset($ID)) {     //If login successful
         }
         else {             //if NORMAL user
             $_SESSION['user'] = 1;
+            $_SESSION['login'] = TRUE;
             $loggedUser = app\models\UsersTable::getUser($ID);
             $user = new User($users['id_user'], $users['name'], $users['lastname'], $users['email'], $users['phone'], $users['city']);
             $_SESSION['loggeduser'] = serialize($user);
