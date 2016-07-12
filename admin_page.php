@@ -2,6 +2,7 @@
 
 session_start();
 
+
 require 'User.php';
 
 $adminUser = unserialize($_SESSION['loggeduser']);
@@ -11,3 +12,20 @@ $name = $adminUser->getName();
 $lastName = $adminUser->getLastName();
 
 include 'view/admin_view.php';
+
+if (isset($_GET['addUser'])){
+    include 'addUser.php';
+}
+
+?>
+
+<!-- <!DOCTYPE html>
+ <html>
+     <head>
+         <meta charset="utf-8">
+         <title></title>
+     </head>
+     <body>
+     <a href="logout.php">Logout</a>
+     </body>
+ </html> !-->
