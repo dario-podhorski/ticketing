@@ -7,9 +7,9 @@ require 'User.php';
 
 $adminUser = unserialize($_SESSION['loggeduser']);
 
-$id = $adminUser->getID();
-$name = $adminUser->getName();
-$lastName = $adminUser->getLastName();
+$userID = $adminUser->getID();
+$userName = $adminUser->getName();
+$userLastName = $adminUser->getLastName();
 
 include 'view/admin_view.php';
 
