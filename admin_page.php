@@ -14,8 +14,12 @@ $userLastName = $adminUser->getLastName();
 include 'view/admin_view.php';
 
 if (isset($_GET['addUser'])){
-    include 'addUser.php';
+    include 'view/addUser_view.php';
 }
+
+
+    print_r($_POST);
+
 
 ?>
 
