@@ -8,7 +8,7 @@
         <script src=""></script>
         <script src="jquery/jquery-1.12.3.min.js" type="text/javascript"></script>
         <script src="js\bootstrap.min.js"></script>
-        <title>Log In</title>
+        <title>Admin Page</title>
     </head>
     <body>
         
@@ -51,7 +51,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="logout.php">Logout</a></li>
                 
-                    <li><a href="#"><?php echo $name." ".$lastName ?></a></li>
+                    <li><a href="#"><?php echo $userName." ".$userLastName ?></a></li>
                 </li>
             </ul>
     </div><!-- /.navbar-collapse -->
