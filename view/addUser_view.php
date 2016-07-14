@@ -25,7 +25,7 @@
                         <option>Zagreb</option>
                     </select>
                 </div>
-                <button class="btn btn-default" type="submit" value="1" name="sub_bttn">Submit</button>
+                <button class="btn btn-default" type="submit" value="1" name="sub_bttn">Add User</button>
             </form>
         </div>
     </div>
