@@ -10,9 +10,9 @@
         <script src="js\bootstrap.min.js"></script>
         <title>Admin Page</title>
     </head>
-    <body>
+    <body style="background-color: #f2f2f2">
         
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default" style="background-color: #d9d9d9">
         <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -28,7 +28,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Link</a></li>
                     <li><a href="#">Link</a></li>
                     
                     <li class="dropdown">
