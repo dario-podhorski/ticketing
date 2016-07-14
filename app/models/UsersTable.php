@@ -36,8 +36,8 @@ class UsersTable {
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':phone', $phone);
         $stmt->bindParam(':city', $city);
-        $stmt->execute();
-        
-    }
-    
+        if ($stmt->execute()){
+        return TRUE;
+        } 
+    }    
 }
