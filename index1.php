@@ -6,7 +6,7 @@
 
 session_start();
 
-if (!isset($_SESSION['login'])) {
+if (empty($_SESSION['loggeduser'])) {
     include "view/login_view.php";
 }
 else {
