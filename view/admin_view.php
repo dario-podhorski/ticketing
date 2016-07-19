@@ -57,8 +57,6 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-        <?php
-        // put your code here
-        ?>
+        
     </body>
 </html>
