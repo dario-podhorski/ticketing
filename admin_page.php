@@ -24,13 +24,17 @@ if (isset($_POST['sub_bttn'])){
     $email = filter_input(INPUT_POST,'email', FILTER_SANITIZE_EMAIL);
     $phone = filter_input(INPUT_POST,'phone', FILTER_SANITIZE_NUMBER_INT);
     $city = $_POST['city'];
+    $password = $_POST['password'];
     
-    require_once 'app/models/UsersTable.php';
+    /*require_once 'app/models/UsersTable.php';
     if (app\models\UsersTable::addUser($name, $lastName, $email, $phone, $city)){
         echo 'User added succesfully';
     }  else {
         echo 'Failed adding user';
-    }
+    }*/
+
+ print_r($_POST);
+    
 }
 
 
