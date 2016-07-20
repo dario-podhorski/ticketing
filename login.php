@@ -68,17 +68,18 @@ if (isset($ID)) {     //If login successful
                     WHERE id_user = $ID";
 
 
-    if($result = $link->query($admin_query)){
+    if($result = $link->query($admin_query)){      //Check if user is ADMIN
         $row = $result->fetch();
 
         if(!empty($row)){    //if ADMIN
         $_SESSION['admin'] = 1;
         $_SESSION['login'] = TRUE;
-        $loggedUser = app\models\UsersTable::getUser($ID);
+        $loggedUser = app\models\UsersTable::getUser($ID);     //Get User from mysql
         $adminUser = new User($loggedUser['id_user'], $loggedUser['name'], $loggedUser['lastname'], $loggedUser['email'],
-                                $loggedUser['phone'], $loggedUser['city'], $admin = TRUE);
-        $_SESSION['loggeduser'] = serialize($adminUser);
+                                $loggedUser['phone'], $loggedUser['city'], $admin = TRUE);   //Create User object
+        $_SESSION['loggeduser'] = serialize($adminUser);      //store user in session
         header('Location:index1.php');
+        
         }
         else {             //if NORMAL user
             $_SESSION['user'] = 1;
