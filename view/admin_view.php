@@ -5,9 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css\bootstrap.min.css">
-        <script src=""></script>
         <script src="jquery/jquery-1.12.3.min.js" type="text/javascript"></script>
-        <script src="js\bootstrap.min.js"></script>
+        <script src="jquery/script.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js"></script>
         <title>Admin Page</title>
     </head>
     <body style="background-color: #f2f2f2">
