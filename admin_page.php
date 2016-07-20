@@ -2,8 +2,10 @@
 
 session_start();
 
-
-require 'User.php';
+/**
+ * Unserialize User from session
+ */
+require_once 'User.php';
 
 $adminUser = unserialize($_SESSION['loggeduser']);
 
@@ -11,8 +13,16 @@ $userID = $adminUser->getID();
 $userName = $adminUser->getName();
 $userLastName = $adminUser->getLastName();
 
+
+/**
+ * Include View for admin pages
+ */
 include 'view/admin_view.php';
 
+
+/**
+ * If Add User include add user form view
+ */
 if (isset($_GET['addUser'])){
     include 'view/addUser_view.php';
 }
