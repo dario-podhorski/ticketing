@@ -1,9 +1,11 @@
 <?php
 
 /* 
- * Scrip for adding USERS through ajax
+ * Script for adding USERS through ajax
  */
-require_once '\app\models\UsersTable.php';
+
+use app\models;
+require_once 'D:\Dropbox\__programiranje\HTML\_PROJEKT\ticketing\app\models\UsersTable.php';
 
     $name = filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
     $lastName = filter_input(INPUT_POST,'lastName', FILTER_SANITIZE_STRING);
@@ -13,8 +15,8 @@ require_once '\app\models\UsersTable.php';
     $password = $_POST['password'];
     
     
-    if (UsersTable::addUser($name, $lastName, $email, $phone, $city)){
-        echo 'User added succesfully';
+    if (app\models\UsersTable::addUser($name, $lastName, $email, $phone, $city)){
+        echo 'success';
     }  else {
-        echo 'Failed adding user';
+        echo 'erro';
     }
