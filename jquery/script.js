@@ -15,7 +15,7 @@ function addRecord(){
         alert("Please enter email");
     }
     else if (password == ""){
-        alert("Please enter password");
+        alert("Please reenter password");
     }else {
         $.post("ajax/create.php", {
             name: name,
@@ -23,9 +23,15 @@ function addRecord(){
             email: email,
             phone: phone,
             city: city
-        },function (data){
-            alert(data);
-        });
+        }, function(data){
+            if (data == 'success'){
+                alert("Success");
+            }
+            else{
+                alert("Fail");
+            };
+            });
+        };
     }
-}
+
 
