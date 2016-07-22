@@ -23,11 +23,11 @@ function addRecord(){
             email: email,
             phone: phone,
             city: city
-        }, function(data){
+        }, function(data, text){
             if (data == 'success'){
                 alert("Success");
             }
-            else{
+            else if (data == 'error') {
                 alert("Fail");
             };
             });
