@@ -18,5 +18,5 @@ require_once 'D:\Dropbox\__programiranje\HTML\_PROJEKT\ticketing\app\models\User
     if (app\models\UsersTable::addUser($name, $lastName, $email, $phone, $city)){
         echo 'success';
     }  else {
-        echo 'erro';
+        echo 'error';
     }
