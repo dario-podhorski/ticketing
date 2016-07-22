@@ -28,6 +28,9 @@ class UsersTable {
     static function addUser($name, $lastname, $email, $phone, $city){
         
         $dbconn = DB::getConnection();
+        if (!$dbconn){    
+        return FALSE;
+        }else {
         $query = "INSERT INTO ticketing.users (name,lastname,email,phone,city) VALUES (:name,:lastname,:email,:phone,:city);
                   ";
         $stmt = $dbconn->prepare($query);
@@ -38,6 +41,9 @@ class UsersTable {
         $stmt->bindParam(':city', $city);
         if ($stmt->execute()){
         return TRUE;
-        } 
+        }else {
+            return FALSE;
+        }
     }    
+}
 }
