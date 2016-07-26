@@ -25,10 +25,10 @@ function addRecord(){
             city: city
         }, function(data, text){
             if (data == 'success'){
-                alert("Success");
+                alert("User added");
             }
             else if (data == 'error') {
-                alert("Fail");
+                alert("Failed adding user");
             };
             });
         };
