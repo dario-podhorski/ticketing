@@ -17,14 +17,14 @@ $userLastName = $adminUser->getLastName();
 /**
  * Include View for admin pages
  */
-include 'view/admin_view.php';
+include_once 'view/admin_view.php';
 
 
 /**
  * If Add User include add user form view
  */
 if (isset($_GET['addUser'])){
-    include 'view/addUser_view.php';
+    include_once 'view/addUser_view.php';
 }
 
 
@@ -43,7 +43,7 @@ if (isset($_POST['sub_bttn'])){
         echo 'Failed adding user';
     }*/
 
- print_r($_POST);
+ //print_r($_POST);
     
 }
 
