@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css\bootstrap.min.css">
-        <script src="jquery/jquery-1.12.3.min.js" type="text/javascript"></script>
-        <script src="jquery/script.js" type="text/javascript"></script>
+        <script type="text/javascript" src="jquery/jquery-1.12.3.min.js"></script>
+        <script type="text/javascript" src="jquery/script.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <title>Admin Page</title>
     </head>
@@ -52,11 +52,10 @@
                 <li><a href="logout.php">Logout</a></li>
                 
                     <li><a href="#"><?php echo $userName." ".$userLastName ?></a></li>
-                </li>
+                
             </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
         
-    </body>
-</html>
+    
