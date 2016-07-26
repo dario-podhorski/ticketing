@@ -10,7 +10,7 @@
                      
                         <div class="form-group">
                             <label for="email">E-mail (required)</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="E-mail">
                         </div>
                         <div class="form-group">
                             <label for="password">Password (required)</label>
@@ -53,3 +53,5 @@
         </div>
     </div>
 </div>
+</body>
+</html>
