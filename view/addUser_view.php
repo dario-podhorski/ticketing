@@ -17,10 +17,8 @@
                             <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                         </div>
                     </div>
-                 
-                                  
-                 
-                 <div class="col-lg-5 col-lg-offset-1">
+                
+                <div class="col-lg-5 col-lg-offset-1">
                     
                         <h2><span class="label label-danger">User info</span></h2>
                         
@@ -45,7 +43,7 @@
                         </div>
                 </div>
                  
-                    <button class="btn btn-default" onclick="addRecord()" value="1" name="sub_bttn">Add User</button>
+                    <button class="btn btn-default" id="add_user">Add User</button>
                 </div>
             </form>
         
