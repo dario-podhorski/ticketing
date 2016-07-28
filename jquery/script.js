@@ -23,13 +23,9 @@ function addRecord(){
             email: email,
             phone: phone,
             city: city
-        }, function(data, text){
-            if (data == 'success'){
-                alert("User added");
-            }
-            else if (data == 'error') {
-                alert("Failed adding user");
-            };
+            },
+            function(data){
+            alert(data);
             });
         };
     }
