@@ -28,7 +28,7 @@ if (isset($_GET['addUser'])){
 }
 
 
-if (isset($_POST['sub_bttn'])){
+/*if (isset($_POST['sub_bttn'])){
     $name = filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
     $lastName = filter_input(INPUT_POST,'lastName', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST,'email', FILTER_SANITIZE_EMAIL);
@@ -36,16 +36,16 @@ if (isset($_POST['sub_bttn'])){
     $city = $_POST['city'];
     $password = $_POST['password'];
     
-    /*require_once 'app/models/UsersTable.php';
+    require_once 'app/models/UsersTable.php';
     if (app\models\UsersTable::addUser($name, $lastName, $email, $phone, $city)){
         echo 'User added succesfully';
     }  else {
         echo 'Failed adding user';
-    }*/
+    }
 
  //print_r($_POST);
     
-}
+}*/
 
 
 ?>
