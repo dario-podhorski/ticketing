@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2" style="background-color: #d9d9d9; border-radius: 15px">
             
-            <form method="post">
+            <form method="POST" action="">
                 <div class="row">
                     <div class="col-lg-5">
                      
