@@ -8,6 +8,10 @@
         <script type="text/javascript" src="jquery/jquery-1.12.3.min.js"></script>
         <script type="text/javascript" src="jquery/script.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
+  
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+
         <title>Admin Page</title>
     </head>
     <body style="background-color: #f2f2f2">
