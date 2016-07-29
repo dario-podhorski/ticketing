@@ -36,7 +36,7 @@
                     <ul class="dropdown-menu">
                         
                         <li><a href="admin_page.php?addUser">Add User</a></li>
-                        <li><a href="#">Delete User</a></li>
+                        <li><a href="admin_page.php?deleteUser">Delete User</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Add Equipment</a></li>
                         <li><a href="#">Delete Equipment</a></li>
