@@ -13,7 +13,14 @@ require_once 'D:\Dropbox\__programiranje\HTML\_PROJEKT\ticketing\database\DB.php
 
 class UsersTable {
     
-    
+    static function getAllUsers(){
+        
+        $dbconn = DB::getConnection();
+        $query = "SELECT * FROM ticketing.users";
+        $result = $dbconn->query($query);
+        return $result;
+    }
+
     static function getUser($ID) {
         
         $dbconn = DB::getConnection();
