@@ -25,27 +25,9 @@ include_once 'view/admin_view.php';
  */
 if (isset($_GET['addUser'])){
     include_once 'view/addUser_view.php';
+}elseif (isset ($_GET['deleteUser'])) {
+    include_once 'view/deleteUser_view.php';
 }
-
-
-/*if (isset($_POST['sub_bttn'])){
-    $name = filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
-    $lastName = filter_input(INPUT_POST,'lastName', FILTER_SANITIZE_STRING);
-    $email = filter_input(INPUT_POST,'email', FILTER_SANITIZE_EMAIL);
-    $phone = filter_input(INPUT_POST,'phone', FILTER_SANITIZE_NUMBER_INT);
-    $city = $_POST['city'];
-    $password = $_POST['password'];
-    
-    require_once 'app/models/UsersTable.php';
-    if (app\models\UsersTable::addUser($name, $lastName, $email, $phone, $city)){
-        echo 'User added succesfully';
-    }  else {
-        echo 'Failed adding user';
-    }
-
- //print_r($_POST);
-    
-}*/
 
 
 ?>
