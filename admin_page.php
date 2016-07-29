@@ -26,7 +26,15 @@ include_once 'view/admin_view.php';
 if (isset($_GET['addUser'])){
     include_once 'view/addUser_view.php';
 }elseif (isset ($_GET['deleteUser'])) {
+    require_once 'app/models/UsersTable.php';
+    $gotUsers =  \app\models\UsersTable::getAllUsers();
     include_once 'view/deleteUser_view.php';
+    while ($row = $gotUsers->fetch(PDO::FETCH_ASSOC)){
+    foreach ($row as $key => $value) {
+        echo '<pre>';
+        echo $row['id_user'];
+        echo '</pre>';
+    }};
 }
 
 
