@@ -11,7 +11,18 @@
                         <th>Phone</th>
                         <th>City</th>
                     </tr>
-                </thead>
+                    </thead>
+                    <tbody>
+                    <?php
+                    while ($row = $gotUsers->fetch(PDO::FETCH_ASSOC)){
+                        echo "<tr>";
+                        foreach ($row as $key => $value) {
+                            echo '<td>'.$value.'</td>';
+                        };
+                        echo '</tr>';
+                    };
+                    ?>
+                </tbody>
             </table>
         </div>
     </div>
