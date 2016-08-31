@@ -30,6 +30,10 @@ $(document).ready(function(){
             });
         };
     });
+    
+    /*
+     * Creating a data Table
+     */ 
     $('#usersTable').DataTable();
     });
         
