@@ -17,7 +17,7 @@
                     while ($row = $gotUsers->fetch(PDO::FETCH_ASSOC)){
                         echo "<tr>";
                         foreach ($row as $key => $value) {
-                            echo '<td>'.$value.'</td>';
+                            echo '<td><a href=admin_page.php?deleteUser&ID='.$row["id_user"].'>'.$value.'</a></td>';
                         };
                         echo '</tr>';
                     };
@@ -27,5 +27,13 @@
         </div>
     </div>
     
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-2">
+            <label>Name</label>
+        </div>
+    </div>
 </div>
  
