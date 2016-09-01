@@ -30,8 +30,9 @@ if (isset($_GET['addUser'])){
 elseif (isset ($_GET['deleteUser'])) {
     require_once 'app/models/UsersTable.php';
     $gotUsers =  \app\models\UsersTable::getAllUsers();
+    $ID = $_GET["ID"];
+    $getUser = \app\models\UsersTable::getUser($ID);
     include_once 'view/deleteUser_view.php';
-    
 };
 
 
