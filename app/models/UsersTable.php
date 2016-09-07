@@ -48,6 +48,15 @@ class UsersTable {
         }else {
             return FALSE;
         }
-    }    
+    }
+
+    static function deleteUser($ID){
+
+        $dbconn = DB::getConnection();
+        $query = "DELETE FROM ticketing.users WHERE id_user = ?";
+        $stmt = $dbconn->prepare($query);
+        $stmt ->bindParam(1, $ID);
+        $stmt ->execute();
+    }
 }
 

@@ -32,7 +32,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-4 col-lg-offset-2">
-            <p>ID: <?php echo $getUser["id_user"]; ?></p>
+            <p id="user_id" value="<?php echo $getUser["id_user"]; ?>">ID: <?php echo $getUser["id_user"]; ?></p>
             
             <p>Name: <?php echo $getUser["name"]; ?></p>
             <p>Lastname: <?php echo $getUser["lastname"]; ?></p>
@@ -41,11 +41,13 @@
             <p>City: <?php echo $getUser["city"]; ?></p>
         </div>
         <div class="col-lg-4">
-            <button id="delete" name="delete">Delete</button>
+            <button id="delUser" name="delete">Delete</button>
         </div>
           
     </div>
 </div>
+
+<div id="proba"></div>
 
 <?php
                     //var_dump($getUser);

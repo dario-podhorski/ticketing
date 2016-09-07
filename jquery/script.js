@@ -18,7 +18,7 @@ $(document).ready(function(){
         else if (password == ""){
             alert("Please reenter password");
         }else {
-            $.post("ajax/create.php", {
+            $.post("ajax/createUser.php", {
             name: name,
             lastName: lastName,
             email: email,
@@ -35,6 +35,17 @@ $(document).ready(function(){
      * Creating a data Table
      */ 
     $('#usersTable').DataTable();
+
+
+    /*
+    * Deleting user
+     */
+    $('#delUser').click(function(e){
+        e.preventDefault();
+        var id = document.getElementById("user_id").getAttribute("value");
+        $.post("ajax/deleteUser.php", {id: id}, function(){location.reload();});
+
+    });
     });
         
  
