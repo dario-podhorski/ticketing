@@ -3,7 +3,7 @@
 namespace app\models;
 use database\DB;
 use PDO;
-require_once 'database/DB.php';
+require_once 'D:\Dropbox\__programiranje\HTML\_PROJEKT\ticketing\database\DB.php';
 
 /**
  * Description of UsersTable
@@ -13,7 +13,14 @@ require_once 'database/DB.php';
 
 class UsersTable {
     
-    
+    static function getAllUsers(){
+        
+        $dbconn = DB::getConnection();
+        $query = "SELECT * FROM ticketing.users";
+        $result = $dbconn->query($query);
+        return $result;
+    }
+
     static function getUser($ID) {
         
         $dbconn = DB::getConnection();
@@ -28,16 +35,28 @@ class UsersTable {
     static function addUser($name, $lastname, $email, $phone, $city){
         
         $dbconn = DB::getConnection();
-        $query = "INSERT INTO ticketing.users (name,lastname,email,phone,city) VALUES (:name,:lastname,:email,:phone,:city);
-                  ";
+        $query = "INSERT INTO ticketing.users (name,lastname,email,phone,city) 
+                  VALUES (:name,:lastname,:email,:phone,:city);";
         $stmt = $dbconn->prepare($query);
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':lastname', $lastname);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':phone', $phone);
         $stmt->bindParam(':city', $city);
-        $stmt->execute();
-        
+        if ($stmt->execute()){
+        return TRUE;
+        }else {
+            return FALSE;
+        }
     }
-    
+
+    static function deleteUser($ID){
+
+        $dbconn = DB::getConnection();
+        $query = "DELETE FROM ticketing.users WHERE id_user = ?";
+        $stmt = $dbconn->prepare($query);
+        $stmt ->bindParam(1, $ID);
+        $stmt ->execute();
+    }
 }
+

@@ -5,14 +5,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css\bootstrap.min.css">
-        <script src=""></script>
-        <script src="jquery/jquery-1.12.3.min.js" type="text/javascript"></script>
-        <script src="js\bootstrap.min.js"></script>
-        <title>Admin Page</title>
-    </head>
-    <body>
+        <script type="text/javascript" src="jquery/jquery-1.12.3.min.js"></script>
+        <script type="text/javascript" src="jquery/script.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         
-        <nav class="navbar navbar-default">
+        <!--Datables!-->
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+
+        <title>Admin Page</title>
+        
+    </head>
+    <body style="background-color: #f2f2f2">
+        
+        <nav class="navbar navbar-default" style="background-color: #d9d9d9">
         <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -28,7 +34,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Link</a></li>
                     <li><a href="#">Link</a></li>
                     
                     <li class="dropdown">
@@ -36,7 +42,7 @@
                     <ul class="dropdown-menu">
                         
                         <li><a href="admin_page.php?addUser">Add User</a></li>
-                        <li><a href="#">Delete User</a></li>
+                        <li><a href="admin_page.php?deleteUser">Delete User</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Add Equipment</a></li>
                         <li><a href="#">Delete Equipment</a></li>
@@ -52,13 +58,10 @@
                 <li><a href="logout.php">Logout</a></li>
                 
                     <li><a href="#"><?php echo $userName." ".$userLastName ?></a></li>
-                </li>
+                
             </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-        <?php
-        // put your code here
-        ?>
-    </body>
-</html>
+        
+    
