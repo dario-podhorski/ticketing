@@ -47,7 +47,7 @@
     </div>
 </div>
 
-<div id="proba"></div>
+
 
 <?php
                     //var_dump($getUser);
