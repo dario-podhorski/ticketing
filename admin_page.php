@@ -33,7 +33,11 @@ elseif (isset ($_GET['deleteUser'])) {
     $ID = $_GET["ID"];
     $getUser = \app\models\UsersTable::getUser($ID);
     include_once 'view/deleteUser_view.php';
-};
+}
+
+if (isset($_GET['addEquipment'])){
+    include_once 'view/addEquipment_view.php';
+}
 
 
 
