@@ -1,8 +1,12 @@
 /* 
- * Add User jquery script
+ * jquery script
  */
 
 $(document).ready(function(){
+
+    /*
+    * Add user
+     */
     $("#add_user").click(function(e){
         e.preventDefault();
         var email = $("#email").val();
@@ -28,7 +32,7 @@ $(document).ready(function(){
             function( data ){
             alert(data);
             });
-        };
+        }
     });
     
     /*
@@ -46,7 +50,37 @@ $(document).ready(function(){
         $.post("ajax/deleteUser.php", {id: id}, function(){location.reload();});
 
     });
+
+    /*
+    * Add equipment
+     */
+    $("#add_equipment").click(function(e){
+        e.preventDefault();
+        var serialNum = $("#serial").val();
+        var partNum = $("#partnum").val();
+        var equipName = $("#eqname").val();
+        var warrStart = $("#warrstart").val();
+        var warrEnd = $("#warrend").val();
+
+        if (serialNum == ""){
+            alert("Please enter serial number");
+        }
+        else {
+            $.post('ajax/createEquipment.php', {
+                serialNum: serialNum,
+                partNum: partNum,
+                equipName: equipName,
+                warrStart: warrStart,
+                warrEnd: warrEnd
+            },
+                function(data){
+                alert(data);
+                });
+            }
+        });
     });
+
+
         
  
 
