@@ -9,7 +9,11 @@
         <script type="text/javascript" src="jquery/script.js"></script>
         <script src="js/bootstrap.min.js"></script>
         
-        <!--Datables!-->
+        <link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.min.css">
+        <script src="jquery/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+        <script src="jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+        
+        <!--Datatables!-->
         <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
         <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 
