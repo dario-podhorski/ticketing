@@ -40,6 +40,9 @@ $(document).ready(function(){
      */ 
     $('#usersTable').DataTable();
 
+    /*
+     * Create date picker
+     */
     $( "#warrstart, #warrend").datepicker({
         dateFormat: "yy-mm-dd"
     });
