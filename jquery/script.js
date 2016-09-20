@@ -40,7 +40,10 @@ $(document).ready(function(){
      */ 
     $('#usersTable').DataTable();
 
-
+    $( "#warrstart, #warrend").datepicker({
+        dateFormat: "yy-mm-dd"
+    });
+    
     /*
     * Deleting user
      */
