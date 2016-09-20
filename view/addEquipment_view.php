@@ -24,15 +24,17 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="warrstart">Warranty Start Date</label>
-                            <div class="col-lg-4">
-                            <input type="text" class="form-control" id="warrstart" name="warrstart" placeholder="Warranty Start Date">
                             
-                            </div>
+                            <label for="warrstart">Warranty Start Date:</label>
+                            <input type="text" name="warrstart" id="warrstart">
+                            
+                            
                         </div>
                         <div class="form-group">
-                            <label for="warrend">Warranty End Date</label>
-                            <input type="text" class="form-control" id="warrend" name="warrend" placeholder="Warranty End Date">
+                            
+                            <label for="warrstart">Warranty End Date:</label>
+                            
+                            <input type="text" name="warrend" id="warrend">                        
                         </div>
 
 
