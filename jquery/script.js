@@ -39,7 +39,7 @@ $(document).ready(function(){
      * Creating a data Table
      */ 
     $('#usersTable').DataTable();
-
+    $('#equipTable').DataTable();
     /*
      * Create date picker
      */
@@ -53,7 +53,7 @@ $(document).ready(function(){
     $('#delUser').click(function(e){
         e.preventDefault();
         var id = document.getElementById("user_id").getAttribute("value");
-        $.post("ajax/deleteUser.php", {id: id}, function(){location.reload();});
+        $.post("ajax/delete.php", {id: id}, function(){location.reload();});
 
     });
 
@@ -84,6 +84,15 @@ $(document).ready(function(){
                 });
             }
         });
+        
+    $('#delEquip').click(function(e){
+        e.preventDefault();
+        var serial = document.getElementById("serial").getAttribute("value");
+        $.post("ajax/delete.php", {serial: serial}, function(){location.reload();});
+
+    });    
+        
+        
     });
 
 

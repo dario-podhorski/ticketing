@@ -27,7 +27,7 @@ if (isset($_GET['addUser'])){
     include_once 'view/addUser_view.php';
 }
 
-elseif (isset ($_GET['deleteUser'])) {
+if (isset ($_GET['deleteUser'])) {
     require_once 'app/models/UsersTable.php';
     $gotUsers =  \app\models\UsersTable::getAllUsers();
     $ID = $_GET["ID"];
@@ -39,7 +39,14 @@ if (isset($_GET['addEquipment'])){
     include_once 'view/addEquipment_view.php';
 }
 
-
+if (isset($_GET['deleteEquipment'])){
+    
+    require_once 'app/models/EquipmentTable.php';
+    $gotEquip = \app\models\EquipmentTable::getAllEquipment();
+    $serial = $_GET["Serial"];
+    $getEquip = \app\models\EquipmentTable::getEquipment($serial);
+    include_once 'view/deleteEquipment_view.php';
+}
 
 ?>
 
