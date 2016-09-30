@@ -23,11 +23,12 @@ $(document).ready(function(){
             alert("Please reenter password");
         }else {
             $.post("ajax/createUser.php", {
-            name: name,
-            lastName: lastName,
-            email: email,
-            phone: phone,
-            city: city
+                email: email,
+                password: password,
+                name: name,
+                lastName: lastName,
+                phone: phone,
+                city: city
             },
             function( data ){
             alert(data);
@@ -40,6 +41,7 @@ $(document).ready(function(){
      */ 
     $('#usersTable').DataTable();
     $('#equipTable').DataTable();
+    
     /*
      * Create date picker
      */

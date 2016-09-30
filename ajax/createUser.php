@@ -13,6 +13,7 @@ require_once 'D:\Dropbox\__programiranje\HTML\_PROJEKT\ticketing\app\models\User
     $phone = filter_input(INPUT_POST,'phone', FILTER_SANITIZE_NUMBER_INT);
     $city = $_POST['city'];
     $password = $_POST['password'];
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
     
     
     if (app\models\UsersTable::addUser($name, $lastName, $email, $phone, $city)){
