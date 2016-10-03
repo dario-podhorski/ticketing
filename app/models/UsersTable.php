@@ -44,7 +44,8 @@ class UsersTable {
         $stmt->bindParam(':phone', $phone);
         $stmt->bindParam(':city', $city);
         if ($stmt->execute()){
-        return TRUE;
+            $lastInsert = $dbconn->lastInsertId();
+        return $lastInsert;
         }else {
             return FALSE;
         }

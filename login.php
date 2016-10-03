@@ -34,6 +34,7 @@ if ($link->connect_error) { //check database connection
 */
 $usrname = filter_input(INPUT_POST, 'username', FILTER_VALIDATE_EMAIL);
 $pass = filter_input(INPUT_POST, 'password');
+$passHash = password_hash($pass, PASSWORD_DEFAULT);
 $res_query = '';
 
 

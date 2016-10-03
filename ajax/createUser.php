@@ -6,6 +6,7 @@
 
 use app\models;
 require_once 'D:\Dropbox\__programiranje\HTML\_PROJEKT\ticketing\app\models\UsersTable.php';
+require_once 'D:\Dropbox\__programiranje\HTML\_PROJEKT\ticketing\app\models\PasswordTable.php';
 
     $name = filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
     $lastName = filter_input(INPUT_POST,'lastName', FILTER_SANITIZE_STRING);
@@ -16,7 +17,8 @@ require_once 'D:\Dropbox\__programiranje\HTML\_PROJEKT\ticketing\app\models\User
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
     
     
-    if (app\models\UsersTable::addUser($name, $lastName, $email, $phone, $city)){
+    if ($lastID = app\models\UsersTable::addUser($name, $lastName, $email, $phone, $city)){
+        models\PasswordTable::addPassword($lastID, $passwordHash);
         echo "User added";
     }  else {
         echo "Failed adding user";
