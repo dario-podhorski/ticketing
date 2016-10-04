@@ -27,7 +27,7 @@ class PasswordTable {
     static function addPassword($ID, $password){
         
         $dbconn = DB::getConnection();
-        $query= "INSERT INTO ticketing.password (id_user, password) VALUES (:ID, :password);";
+        $query= "INSERT INTO ticketing.password (id_user, password) VALUES (:ID, :password)";
         $stmt = $dbconn->prepare($query);
         $stmt->bindParam(':ID', $ID);
         $stmt->bindParam(':password', $password);
