@@ -50,7 +50,9 @@
                         <li role="separator" class="divider"></li>
                         <li><a href="admin_page.php?addEquipment">Add Equipment</a></li>
                         <li><a href="admin_page.php?deleteEquipment">Delete Equipment</a></li>
-                        
+                        <li role="separator" class="divider"></li>
+                        <li><a href="admin_page.php?addCity">Add City</a></li>
+                        <li><a href="admin_page.php?deleteCity">Delete City</a></li>
                         
                     </ul>
                     </li>

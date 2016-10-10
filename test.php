@@ -6,18 +6,17 @@
  * and open the template in the editor.
  */
 
-use app\models\UsersTable;
-require_once 'app/models/UsersTable.php';
-require_once 'User.php';
-
-$users=  UsersTable::getUser(1);
-echo "<pre>";
-print_r($users);
-echo "</pre>";
-
-$user = new User($users['id_user'], $users['name'], $users['lastname'], $users['email'], $users['phone'], $users['city']);
+use app\models;
+require_once 'app/models/CityTable.php';
 
 
-echo '<pre>';
-var_dump($user);
-echo '</pre>';
+$gotCity = \app\models\CityTable::getAllCity();
+
+while ($row = $gotCity->fetch(PDO::FETCH_ASSOC)){
+echo $row['city'];
+}
+/*while ($row = $gotCity->fetch(PDO::FETCH_ASSOC)){
+                                foreach ($row as $key => $value) {
+                                    print_r($row);
+                                }
+                                }

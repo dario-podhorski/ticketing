@@ -37,8 +37,13 @@
                         <div class="form-group">
                             <label for="city">City</label>
                             <select class="form-control" id="city" name="city">
-                                <option>Osijek</option>
-                                <option>Zagreb</option>
+                                <?php
+                                while ($row = $gotCity->fetch(PDO::FETCH_ASSOC)){
+                                
+                                    echo '<option>'. $row['city'] . '</option>';
+                                
+                                }
+                                ?>
                             </select>
                         </div>
                 </div>

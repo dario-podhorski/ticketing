@@ -24,6 +24,8 @@ include_once 'view/admin_view.php';
  * If Add User include add user form view
  */
 if (isset($_GET['addUser'])){
+    require_once 'app/models/CityTable.php';
+    $gotCity = \app\models\CityTable::getAllCity();
     include_once 'view/addUser_view.php';
 }
 
@@ -46,6 +48,12 @@ if (isset($_GET['deleteEquipment'])){
     $serial = $_GET["Serial"];
     $getEquip = \app\models\EquipmentTable::getEquipment($serial);
     include_once 'view/deleteEquipment_view.php';
+}
+
+if (isset($_GET['addCity'])){
+    require_once 'app/models/CityTable.php';
+    $gotCity = \app\models\CityTable::getAllCity();
+    include_once 'view/addCity_view.php';
 }
 
 ?>

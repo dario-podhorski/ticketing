@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Dario
- * Date: 13.9.2016.
- * Time: 14:04
+ * 
  */
 
 use app\models;

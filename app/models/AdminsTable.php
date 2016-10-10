@@ -1,20 +1,27 @@
 <?php
 
-/**
+/* 
  * 
  */
-
 namespace app\models;
 use database\DB;
 use PDO;
 require_once 'D:\Dropbox\__programiranje\HTML\_PROJEKT\ticketing\database\DB.php';
 
-class PasswordTable {
+class AdminsTable {
     
-    static function getPassword($ID){
-        
+    static function getAllAdmins(){
+
         $dbconn = DB::getConnection();
-        $query = "SELECT * FROM ticketing.password WHERE id_user=?";
+        $query = "SELECT * FROM ticketing.admins";
+        $result = $dbconn->query($query);
+        return $result;
+    }
+    
+    static function getAdmin($ID){
+
+        $dbconn = DB::getConnection();
+        $query = "SELECT * FROM ticketing.admins WHERE id_user = ?";
         $stmt = $dbconn->prepare($query);
         $stmt->bindParam(1, $ID);
         $stmt->execute();
@@ -22,34 +29,27 @@ class PasswordTable {
         return $result;
     }
     
-    static function addPassword($ID, $password){
+    static function addAdmin($ID){
         
         $dbconn = DB::getConnection();
-        $query= "INSERT INTO ticketing.password (id_user, password) VALUES (:ID, :password)";
+        $query= "INSERT INTO ticketing.admins (id_user) VALUES (:ID)";
         $stmt = $dbconn->prepare($query);
         $stmt->bindParam(':ID', $ID);
-        $stmt->bindParam(':password', $password);
         if ($stmt->execute()){
         return TRUE;
         }else {
             return FALSE;
         }
-        
-        
     }
     
-    static function deletePassword($ID){
+    static function deleteAdmin($ID){
         
         $dbconn = DB::getConnection();
-        $query= "DELETE FROM ticketing.password WHERE id_user = ?";
+        $query= "DELETE FROM ticketing.admins WHERE id_user = ?";
         $stmt = $dbconn->prepare($query);
         $stmt->bindParam(1, $ID);
         $stmt->execute();
         
-        
-        
+         
     }
 }
-
-
-

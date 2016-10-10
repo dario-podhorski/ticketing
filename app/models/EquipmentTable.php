@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Dario
- * Date: 12.9.2016.
- * Time: 13:41
+ * 
  */
 
 namespace app\models;
