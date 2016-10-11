@@ -27,7 +27,7 @@
                     
                 
              
-                    <button class="btn btn-default" id="add_user">Add User</button>
+                    <button class="btn btn-default" id="add_city">Add City</button>
                     </div>
                 </div>   
             </form>

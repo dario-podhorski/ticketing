@@ -92,7 +92,29 @@ $(document).ready(function(){
         var serial = document.getElementById("serial").getAttribute("value");
         $.post("ajax/delete.php", {serial: serial}, function(){location.reload();});
 
-    });    
+    });
+    
+    $("#add_city").click(function(e){
+        e.preventDefault();
+        var city = $("#city").val();
+        var region = $("#region").val();
+                
+        if (city == ""){
+            alert("Please enter City");
+        }
+        else if (region == ""){
+            alert("Please reenter region");
+        }else {
+            $.post("ajax/createCity.php", {
+                city: city,
+                region: region
+            
+            },
+            function( data ){
+            alert(data);
+            });
+        }
+    });
         
         
     });
