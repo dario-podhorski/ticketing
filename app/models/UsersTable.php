@@ -8,7 +8,7 @@ require_once 'D:\Dropbox\__programiranje\HTML\_PROJEKT\ticketing\database\DB.php
 /**
  * Description of UsersTable
  * Model for getting data from users table in database
- * @author Dario
+ * 
  */
 
 class UsersTable {
