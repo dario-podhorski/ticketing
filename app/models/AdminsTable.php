@@ -6,7 +6,7 @@
 namespace app\models;
 use database\DB;
 use PDO;
-require_once 'D:\Dropbox\__programiranje\HTML\_PROJEKT\ticketing\database\DB.php';
+require_once 'database/DB.php';
 
 class AdminsTable {
     

@@ -6,6 +6,7 @@ session_start();
  * Unserialize User from session
  */
 require_once 'User.php';
+require_once 'database/DB.php';
 
 $adminUser = unserialize($_SESSION['loggeduser']);
 
@@ -32,9 +33,14 @@ if (isset($_GET['addUser'])){
 if (isset ($_GET['deleteUser'])) {
     require_once 'app/models/UsersTable.php';
     $gotUsers =  \app\models\UsersTable::getAllUsers();
-    $ID = $_GET["ID"];
+    if (isset($_GET["ID"])){
+        $ID = $_GET["ID"];
+    
     $getUser = \app\models\UsersTable::getUser($ID);
+    
+    }
     include_once 'view/deleteUser_view.php';
+    
 }
 
 if (isset($_GET['addEquipment'])){

@@ -5,7 +5,7 @@
 *Login script
 */
 
-//use app\models;
+use app\models;
 
 require_once 'app/models/UsersTable.php';
 require_once 'User.php';
@@ -82,7 +82,7 @@ if (isset($ID)) {
                                 $loggedUser['phone'], $loggedUser['city'], $admin = TRUE);   //Create User object
         
             $_SESSION['loggeduser'] = serialize($adminUser);      //store user in session
-            header('Location:index1.php');
+            header('Location: index1.php');
         
             }
             else {             //if NORMAL user
@@ -91,7 +91,7 @@ if (isset($ID)) {
                 $loggedUser = app\models\UsersTable::getUser($ID);
                 $user = new User($users['id_user'], $users['name'], $users['lastname'], $users['email'], $users['phone'], $users['city']);
                 $_SESSION['loggeduser'] = serialize($user);
-                header('Location:index1.php');
+                header('Location: index1.php');
             }
         
     }

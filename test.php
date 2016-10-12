@@ -6,17 +6,5 @@
  * and open the template in the editor.
  */
 
-use app\models;
-require_once 'app/models/CityTable.php';
-
-
-$gotCity = \app\models\CityTable::getAllCity();
-
-while ($row = $gotCity->fetch(PDO::FETCH_ASSOC)){
-echo $row['city'];
-}
-/*while ($row = $gotCity->fetch(PDO::FETCH_ASSOC)){
-                                foreach ($row as $key => $value) {
-                                    print_r($row);
-                                }
-                                }
+echo __DIR__;
+echo DIRECTORY_SEPARATOR;
